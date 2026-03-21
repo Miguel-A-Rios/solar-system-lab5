@@ -39,7 +39,7 @@ app.get('/planetInfo', (req, res) => {
 
 app.get('/nasaPod', async(req, res) => {
     try {    
-        let url ="https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=2026-03-11";
+        let url ="https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=2026-03-20";
 
         let response = await fetch(url);
 
