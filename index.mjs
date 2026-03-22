@@ -39,7 +39,17 @@ app.get('/planetInfo', (req, res) => {
 
 app.get('/nasaPod', async(req, res) => {
     try {  
-        let url ="https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=2026-03-21";
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = String(today.getMonth() + 1).padStart(2, '0');
+        let day = String(today.getDate()).padStart(2,'0');
+
+        console.log(year);
+        console.log(month);
+        console.log(day);
+
+        // let url ="https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=2026-03-21";
+        let url ="https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=" + year + "-" + month + "-" + day;
 
         let response = await fetch(url);
 
